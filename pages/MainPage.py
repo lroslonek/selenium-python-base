@@ -1,15 +1,14 @@
 import logging
-
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-
 from pages.BasePage import BasePage
 from pages.ResultsPage import ResultsPage
 from utils.WebdriverWaits import WebdriverWaits
 
 
 class MainPage(BasePage):
+
     __country_modal_locator = (By.XPATH, '//*[@id="Form"]/div[7]/div/div/div/button')
     __ad_modal_locator = (By.XPATH, '//*[@id="advertPopup"]/div/div/div[1]/button')
     __search_box_locator = (By.ID, 'txtSearch')

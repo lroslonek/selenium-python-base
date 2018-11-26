@@ -29,10 +29,10 @@ class BagPage(BasePage):
         logging.info("price for two items is: {}".format(str(total_price)))
 
         if 2 * item_price == total_price:
-            logging.info("prices are correct!")
+            logging.info("PASS: prices are correct!")
             return True
         else:
-            logging.error("prices are NOT correct! :(")
+            logging.error("FAIL: prices are NOT correct! :(")
             return False
 
     def __get_decimal_value(self, locator):

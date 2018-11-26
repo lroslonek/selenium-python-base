@@ -1,7 +1,5 @@
 import logging
-
 from selenium.webdriver.common.by import By
-
 from pages.BasePage import BasePage
 from pages.ProductPage import ProductPage
 from utils.WebdriverWaits import WebdriverWaits
