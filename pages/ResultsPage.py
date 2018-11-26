@@ -1,16 +1,18 @@
 import logging
-import time
+
+from selenium.webdriver.common.by import By
+
 from pages.BasePage import BasePage
-from pages.assertions.PropertyContent import PropertyContent
+from pages.utils.WebdriverWaits import WebdriverWaits
 
 
 class ResultsPage(BasePage):
+
+    __first_product_result_locator = (By.XPATH, '//*[@id="navlist"]/li[1]')
 
     def __init__(self, driver):
         super().__init__(driver)
         logging.info("results page opened")
 
-    @staticmethod
-    def results_contain_phrase(driver, phrase):
-        time.sleep(3)
-        return PropertyContent.page_source_has_text(driver, phrase)
+    def get_first_product_result(self):
+        WebdriverWaits.wait_for_element_visible(self.driver, 5, self.__first_product_result_locator).click()
