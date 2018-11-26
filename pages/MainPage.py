@@ -1,5 +1,4 @@
 import logging
-from time import sleep
 
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
@@ -7,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 
 from pages.BasePage import BasePage
 from pages.ResultsPage import ResultsPage
-from pages.utils.WebdriverWaits import WebdriverWaits
+from utils.WebdriverWaits import WebdriverWaits
 
 
 class MainPage(BasePage):

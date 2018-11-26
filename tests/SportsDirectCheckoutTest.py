@@ -15,7 +15,10 @@ class GoogleQueryTest(unittest.TestCase):
         page = MainPage(self.driver)
         page.dismiss_modals()
         page = page.search_for_phrase("Garmin forerunner")
-        page.get_first_product_result()
+        page = page.get_first_product_result()
+        page.add_product_to_bag()
+        page.view_bag()
+
         sleep(3)
         assert True
 
