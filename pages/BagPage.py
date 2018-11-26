@@ -8,16 +8,16 @@ from utils.WebdriverWaits import WebdriverWaits
 
 class BagPage(BasePage):
 
-    __add_to_bag_locator = (By.CLASS_NAME, 'addToBag')
+    __increase_quantity_locator = (By.XPATH, '//*[@id="dnn_ctr1628848_ViewBasket_BasketDetails_gvBasketDetails"]/table/tbody/tr/td[4]/div/a[2]')
+    __update_bag_locator = (By.CLASS_NAME, 'NewUpdateQuant')
 
     def __init__(self, driver):
         super().__init__(driver)
         logging.info("bag page opened")
 
-    # def add_product_to_bag(self):
-    #     WebdriverWaits.wait_for_element_visible(self.driver, 5, self.__add_to_bag_locator).click()
-    #
-    # def view_bag(self):
-    #     WebdriverWaits.wait_for_element_open(self.driver, 4)
-    #     self.driver.find_element(*self.__view_bag_locator).click()
-    #     return BagPage(self.driver)
+    def increase_product_quantity(self):
+        self.driver.find_element(*self.__increase_quantity_locator).click()
+
+    def update_bag(self):
+        self.driver.find_element(*self.__update_bag_locator).click()
+
