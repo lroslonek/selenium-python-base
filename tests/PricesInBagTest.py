@@ -1,5 +1,4 @@
 import unittest
-from time import sleep
 from selenium import webdriver
 from pages.MainPage import MainPage
 

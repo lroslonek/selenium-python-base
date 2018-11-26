@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from pages.BasePage import BasePage
 from pages.ResultsPage import ResultsPage
+from pages.SignInPage import SignInPage
 from utils.WebdriverWaits import WebdriverWaits
 
 
@@ -27,6 +28,10 @@ class MainPage(BasePage):
     def dismiss_modals(self):
         self.__dismiss_advert_modal()
         self.__dismiss_country_modal()
+
+    def go_to_sign_in_page(self):
+        self.driver.find_element(*self._sign_in_locator).click()
+        return SignInPage(self.driver)
 
     def __dismiss_advert_modal(self):
         try:
