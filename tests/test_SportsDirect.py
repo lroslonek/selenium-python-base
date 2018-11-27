@@ -13,7 +13,6 @@ class PricesInBagTest(TestCase):
         self.driver.quit()
 
     def test_should_item_and_total_bag_prices_be_correct(self):
-        logging.info("")
         # given
         main_page = MainPage(self.driver)
         main_page.dismiss_modals()
