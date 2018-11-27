@@ -1,9 +1,11 @@
 import unittest
+
 from selenium import webdriver
+
 from pages.MainPage import MainPage
 
 
-class GoogleQueryTest(unittest.TestCase):
+class PricesInBagTest(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome('../driver/chromedriver')
@@ -11,7 +13,7 @@ class GoogleQueryTest(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def test_item_and_total_prices_in_bag(self):
+    def test_should_item_and_total_bag_prices_be_correct(self):
         # given
         main_page = MainPage(self.driver)
         main_page.dismiss_modals()
