@@ -1,6 +1,9 @@
 import logging
 from decimal import Decimal
+
 from selenium.webdriver.common.by import By
+
+from exceptions.L10nException import L10nException
 from pages.BasePage import BasePage
 
 
@@ -36,4 +39,8 @@ class BagPage(BasePage):
             return False
 
     def __get_decimal_value(self, locator):
-        return Decimal(self.driver.find_element(*locator).text.strip("£"))
+        priceText = self.driver.find_element(*locator).text
+        if "£" in priceText:
+            return Decimal(priceText.strip("£"))
+        else:
+            raise L10nException("wrong currency given!")
