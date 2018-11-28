@@ -6,6 +6,7 @@ from pages.BasePage import BasePage
 from pages.ResultsPage import ResultsPage
 from pages.SignInPage import SignInPage
 from utils.WebdriverWaits import WebdriverWaits
+from utils.YamlReader import read_configuration
 
 
 class MainPage(BasePage):
@@ -14,9 +15,11 @@ class MainPage(BasePage):
     __ad_modal_locator = (By.XPATH, '//*[@id="advertPopup"]/div/div/div[1]/button')
     __search_box_locator = (By.ID, 'txtSearch')
 
+    _BASE_URL = read_configuration('base-url')
+
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get('https://www.sportsdirect.com/')
+        self.driver.get(self._BASE_URL)
         logging.info("SportsDirect page opened")
 
     def search_for_phrase(self, phrase):

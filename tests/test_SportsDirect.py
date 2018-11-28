@@ -1,6 +1,7 @@
-import logging
 from unittest import TestCase
+
 from selenium import webdriver
+
 from pages.MainPage import MainPage
 
 
